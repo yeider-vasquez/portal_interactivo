@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Formación Tech | Nexus Academy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="hero-header">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <span class="brand-tag">NEXUS ACADEMY</span>
+      <h1>Impulsa tu Perfil Tecnológico</h1>
+      <p>Módulos prácticos de desarrollo web diseñados para el mercado actual.</p>
+    </div>
+  </header>
+
+  <!-- Barra de Navegación -->
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">Nexus<span>.dev</span></a>
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#inscripcion" class="btn-nav">Inscribirme</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor Principal -->
+  <main class="main-container" id="inicio">
+
+    <!-- Sección Cursos -->
+    <section class="section-courses" id="cursos">
+      <div class="section-title">
+        <h2>Rutas de Aprendizaje</h2>
+        <p>Selecciona un curso para consultar sus especificaciones y precio base.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card-course" data-course="HTML">
+          <div class="card-header">
+            <span class="badge badge-html">Frontend Base</span>
+            <span class="icon-tech">&lt;/&gt;</span>
+          </div>
+          <h3>HTML5 Semántico</h3>
+          <p>Aprende la arquitectura web moderna, estándares de accesibilidad (WCAG) y estructura SEO.</p>
+          <div class="card-footer">
+            <span class="price-label">Inversión base</span>
+            <span class="price-val">$100.000 <small>COP</small></span>
+          </div>
+        </article>
+
+        <article class="card-course" data-course="CSS">
+          <div class="card-header">
+            <span class="badge badge-css">Diseño & Layout</span>
+            <span class="icon-tech">🎨</span>
+          </div>
+          <h3>CSS3 & Layouts</h3>
+          <p>Domina Flexbox, CSS Grid, variables CSS, animaciones y diseño totalmente adaptable.</p>
+          <div class="card-footer">
+            <span class="price-label">Inversión base</span>
+            <span class="price-val">$120.000 <small>COP</small></span>
+          </div>
+        </article>
+
+        <article class="card-course" data-course="JavaScript">
+          <div class="card-header">
+            <span class="badge badge-js">Lógica & DOM</span>
+            <span class="icon-tech">⚡</span>
+          </div>
+          <h3>JavaScript ES6+</h3>
+          <p>Lógica de programación, manipulación dinámica del DOM, eventos y consumo de datos.</p>
+          <div class="card-footer">
+            <span class="price-label">Inversión base</span>
+            <span class="price-val">$150.000 <small>COP</small></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección Formulario -->
+    <section class="section-form-wrapper" id="inscripcion">
+      <div class="form-card">
+        <div class="form-header">
+          <h2>Cotizador de Inscripción</h2>
+          <p>Ingresa tus datos para generar el desglose de tarifa según la modalidad.</p>
+        </div>
+
+        <form id="formulario" novalidate>
+          <div class="form-grid">
+            
+            <div class="form-group full-width">
+              <label for="nombre">Nombre Completo</label>
+              <input type="text" id="nombre" placeholder="Ej. Yeider Vásquez" minlength="3" maxlength="60" required>
+              <span class="error-msg">El nombre debe tener al menos 3 caracteres.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo Electrónico</label>
+              <input type="email" id="correo" placeholder="usuario@dominio.com" required>
+              <span class="error-msg">Ingresa un correo electrónico válido.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" placeholder="Edad (14 - 100)" min="14" max="100" required>
+              <span class="error-msg">Debes tener entre 14 y 100 años.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="curso">Selecciona tu Curso</label>
+              <select id="curso" required>
+                <option value="">-- Elige una opción --</option>
+                <option value="HTML">HTML5 Semántico ($100.000)</option>
+                <option value="CSS">CSS3 & Layouts ($120.000)</option>
+                <option value="JavaScript">JavaScript ES6+ ($150.000)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="modalidad">Modalidad de Estudio</label>
+              <select id="modalidad" required>
+                <option value="">-- Elige la modalidad --</option>
+                <option value="Virtual">Virtual (Sin costo adicional)</option>
+                <option value="Presencial">Presencial (+$20.000 COP recargo)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <span>Calcular Valor Total</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button type="reset" class="btn btn-secondary">Limpiar</button>
+          </div>
+        </form>
+
+        <!-- Ticket / Resumen de Resultado -->
+        <div id="resultado" class="summary-box" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p><strong>Nexus Academy</strong> • Proyecto Académico de Desarrollo Web</p>
+      <small>© 2026 Todos los derechos reservados. Ejercicio académico de simulación sin cobros reales.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
